@@ -1,0 +1,10 @@
+<span class="unread" (click)="openListMessage(item.id)">
+  <a class="msg" >
+    <img src="assets/img/avatars/male.png" alt="" class="air air-top-left margin-top-5" width="40"
+         height="40"/>
+    <span class="from">{{item.title}}</span>
+    <span>{{item.time | date: 'short'}}</span>
+    <span class="subject">{{item.subject}}</span>
+    <span class="msg-body">{{item.message}}</span>
+  </a>
+</span>

@@ -1,0 +1,38 @@
+<div sa-widget [editbutton]="false" color="darken">
+  <header><span class="widget-icon"> <i class="fa fa-table"></i> </span>
+    <h2>Active Pipeline</h2></header>
+  <div>
+    <div class="widget-body no-padding">
+      <sa-datatable
+        [options]="{
+        colReorder: true,
+      ajax: 'assets/api/tables/datatables.standard.json',
+      columns: [ {data: 'category'}, {data: 'type'}, {data: 'dte'}, {data: 'client'}, {data: 'city'} ] }"
+        paginationLength="true" tableClass="table table-striped table-bordered table-hover"
+        width="100%">
+        <thead>
+        <tr>
+          <th data-class="expand">
+            Category
+          </th>
+          <th data-hide="phone">
+            Type
+          </th>
+          <th><i
+            class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>
+            DTE
+          </th>
+          <th data-hide="phone,tablet"><i
+            class="fa fa-fw fa-user txt-color-blue hidden-md hidden-sm hidden-xs"></i>
+            Client
+          </th>
+          <th data-hide="phone,tablet"><i
+            class="fa fa-fw fa-map txt-color-blue hidden-md hidden-sm hidden-xs"></i>City</th>
+
+        </tr>
+        </thead>
+      </sa-datatable>
+    </div>
+  </div>
+</div>
+

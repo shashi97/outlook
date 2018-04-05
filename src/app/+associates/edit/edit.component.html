@@ -1,0 +1,107 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Associate']" icon="pencil" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+  </div>
+
+  <!-- widget grid -->
+  <sa-widgets-grid>
+    <!-- START ROW -->
+    <div class="row">
+      <!-- NEW COL START -->
+      <article class="col-sm-12 col-md-12 col-lg-6">
+        <!-- Widget ID (each widget will need unique ID)-->
+        <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+          <header>
+            <h2>Edit</h2>
+          </header>
+          <!-- widget div-->
+          <div>
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+              <form id="rmt-accounts-add" class="smart-form"
+                    [saUiValidate]="validationOptions"
+                    novalidate="novalidate" >
+                <fieldset>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
+                      <input id="username" type="text" name="username" placeholder="Email Address" [(ngModel)]="account.username" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Needed to coomunicate with the associate.</b>
+                    </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                      <input id="lastName" type="text" name="lastName" placeholder="Last Name" [(ngModel)]="account.lastName" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's last name.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                      <input id="firstName" type="text" name="firstName" placeholder="First Name" [(ngModel)]="account.firstName" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's first name.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-star"></i>
+                      <input id="title" type="text" name="title" placeholder="Title" [(ngModel)]="account.title" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's title.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-phone"></i>
+                      <input id="mobileNumber" type="text" name="mobileNumber" placeholder="Mobile" [(ngModel)]="account.mobileNumber" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's mobile number.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-image"></i>
+                      <input id="avatarUrl" type="text" name="avatarUrl" placeholder="Avatar URL" [(ngModel)]="account.avatarUrl" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Link to the associate's avatar image.</b> </label>
+                  </section>
+                </fieldset>
+                <fieldset>
+                  <div class="row roles">
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                      <p>Roles</p><hr/><br/>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isBroker" [(ngModel)]="account.isBroker"/>
+                        <i></i>Broker</label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isAgent" [(ngModel)]="account.isAgent"/>
+                        <i></i>Agent</label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isAssistant" [(ngModel)]="account.isAssistant"/>
+                        <i></i>Assistant</label>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                      <p>Avatar</p><hr/><br/>
+                      <img class="avatar" *ngIf="account.avatarUrl" [src]="account.avatarUrl" alt="{{account.firstName}} {{account.lastName}}">
+                      <img class="avatar" *ngIf="!account.avatarUrl" src="assets/img/avatars/default-user-image.png" alt="{{account.firstName}} {{account.lastName}}">
+                    </section>
+                  </div>
+                </fieldset>
+              </form>
+              <footer class="widget-footer">
+                <div>
+                    <div class="btn btn-default action-button" (click)="onSubmit()">
+                        <div><i class="fa fa-save"></i></div>
+                        <div>Save</div>
+                    </div>
+                    <div class="btn btn-default action-button" (click)="onClickCancel($event)">
+                      <div><i class="fa fa-times"></i></div>
+                      <div>Cancel</div>
+                    </div>
+                </div>
+              </footer>
+
+
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </div>
+        <!-- end widget -->
+      </article>
+      <!-- END COL -->
+    </div>
+    <!-- END ROW -->
+  </sa-widgets-grid>
+  <!-- end widget grid -->
+</div>
+

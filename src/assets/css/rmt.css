@@ -1,0 +1,30 @@
+#left-panel {
+    background: linear-gradient(to right,#2b2825 93%,#22201e 100%)
+}
+
+#header {
+    height: 52px;
+}
+
+#logo {
+    margin-top: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.rmt-header-title-weak {
+    font-size: 1.8em;
+    font-family: "Open Sans",Arial,Helvetica,Sans-Serif;
+    font-weight: 200;
+    color: rgb(96, 96, 96);
+}
+
+.rmt-header-title:hover > .rmt-header-title-weak {
+    color: black;
+}
+.rmt-header-title-strong {
+    font-size: 2em;
+    font-family: Arial,Helvetica,Sans-Serif;
+    font-weight: bolder;
+}
+

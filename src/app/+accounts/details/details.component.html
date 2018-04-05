@@ -1,0 +1,68 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+      <sa-big-breadcrumbs [items]="['Account']" icon="clipboard" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+    </div>
+  
+    <!-- widget grid -->
+    <sa-widgets-grid>
+      <!-- START ROW -->
+      <div class="row">
+        <!-- NEW COL START -->
+        <article class="col-sm-12 col-md-12 col-lg-6">
+          <!-- Widget ID (each widget will need unique ID)-->
+          <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+            <header>
+              <h2>Details</h2>
+            </header>
+            <!-- widget div-->
+            <div>
+              <!-- widget content -->
+              <div class="widget-body">
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Username:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{account.username}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <label class="checkbox"><strong>Roles:</strong></label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isAdministrator, 'fa-square': !account.isAdministrator}"></i>Administrator</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isCaptureTechnician, 'fa-square': !account.isCaptureTechnician}"></i>Capture Technician</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isContentTechnician, 'fa-square': !account.isContentTechnician}"></i>Content Technician</label>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <label class="checkbox"><strong>Status:</strong></label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isActive, 'fa-square': !account.isActive}"></i>Active</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isVerified, 'fa-square': !account.isVerified}"></i>Verified</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isLocked, 'fa-square': !account.isLocked}"></i>Locked</label>
+                  </div>
+                </div>
+                <footer class="widget-footer">
+                    <div class="btn btn-default action-button" (click)="onClickDelete($event)">
+                      <div><i class="fa fa-times"></i></div>
+                      <div>Delete</div>
+                    </div>
+                    <div class="btn btn-default action-button" (click)="onClickEdit($event)">
+                      <div><i class="fa fa-pencil"></i></div>
+                      <div>Edit</div>
+                    </div>
+                    <div class="btn btn-default action-button" (click)="onClickCancel($event)">
+                      <div><i class="fa fa-arrow-left"></i></div>
+                      <div>Back</div>
+                    </div>
+                </footer>
+              </div>
+              <!-- end widget content -->
+            </div>
+            <!-- end widget div -->
+          </div>
+          <!-- end widget -->
+        </article>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </sa-widgets-grid>
+    <!-- end widget grid -->
+  </div>
+  
+  

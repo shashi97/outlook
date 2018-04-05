@@ -1,0 +1,89 @@
+<div id="content" *ngIf="profile">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <div class="well well-light well-sm no-margin no-padding">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div id="myCarousel" class="carousel fade profile-carousel">
+                      <!-- <div class="air air-bottom-right padding-10">
+                        <a href="" class="btn txt-color-white bg-color-teal btn-sm"><i class="fa fa-check"></i> Follow</a>&#xA0;
+                        <a href="" class="btn txt-color-white bg-color-pinkDark btn-sm"><i class="fa fa-link"></i> Connect</a>
+                      </div> -->
+                      <div class="air air-top-left padding-10">
+                        <!-- <h4 class="txt-color-white font-md">Jan 1, 2014</h4> -->
+                      </div>
+                      <!-- <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                      </ol> -->
+                      <div class="carousel-inner">
+                        <div class="item active">
+                          <img src="http://www.cashbackdiscountrealestate.com/wp-content/uploads/2016/03/Cash-Back-Discount-Real-Estate-Banner-One.jpg" alt="demo user">
+                        </div>
+                        <!-- <div class="item">
+                          <img src="assets/img/demo/s2.jpg" alt="demo user">
+                        </div>
+                        <div class="item">
+                          <img src="assets/img/demo/m3.jpg" alt="demo user">
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="col-sm-3 profile-pic">
+                          <img *ngIf="profile.avatarUrl" [src]="profile.avatarUrl" alt="{{profile.firstName}} {{profile.lastName}}">
+                          <img *ngIf="!profile.avatarUrl" src="assets/img/avatars/default-user-image.png" alt="default avatar">
+                      </div>
+                      <div class="col-sm-8">
+                        <h1>{{profile.firstName}} <span class="semi-bold">{{profile.lastName}}</span>
+                          <br>
+                          <small>{{profile.title}}</small>
+                        </h1>
+                        <ul class="list-unstyled">
+                          <li>
+                            <p class="text-muted">
+                              <i class="fa fa-phone"></i>&#xA0;&#xA0;<span class="txt-color-darken">{{profile.mobileNumber}}</span>
+                            </p>
+                          </li>
+                          <li>
+                            <p class="text-muted">
+                              <i class="fa fa-envelope"></i>&#xA0;&#xA0;<a href="mailto:{{profile.username}}">{{profile.username}}</a>
+                            </p>
+                          </li>
+                          <li>
+                              <br>
+                              <span *ngIf="profile.summary">
+                                  <p class="font-md">
+                                    <i>About</i>
+                                  </p>
+                                    <p>{{profile.summary}}</p>
+                                  <br>
+                                </span>
+                          </li>
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-12">
+                  <button class="btn btn-primary pull-right"  (click)="onClickEdit($event)">Edit</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  
+
+

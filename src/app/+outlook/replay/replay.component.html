@@ -1,0 +1,164 @@
+<div class="table-wrap custom-scroll sa-outlook-content">
+  <h2 class="email-open-header">
+    <!-- Reply to > {{replayTo.subject}} <span class="label txt-color-white">{{replayTo.folder}} -->
+
+    <!-- </span> -->
+    <!-- <a tooltip-placement="left" uib-tooltip="Print" class="txt-color-darken pull-right">
+      <i class="fa fa-print"></i>
+    </a> -->
+  </h2>
+
+  <form enctype="multipart/form-data" class="form-horizontal">
+
+    <div class="inbox-info-bar no-padding">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>To</strong>
+          </label>
+
+          <div class="col-md-11">
+
+            <p-chips name="to" [(ngModel)]="commonModel.toValues" addOnTab=true addOnBlur=true></p-chips>
+
+
+            <em>
+              <a (click)="carbonCopy = true" *ngIf="!carbonCopy" tooltip-placement="bottom" uib-tooltip="Carbon Copy">CC</a>
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding" *ngIf="carbonCopy">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>CC</strong>
+          </label>
+
+          <div class="col-md-11">
+
+            <em>
+              <a (click)="blindCarbonCopy=true" *ngIf="!blindCarbonCopy" tooltip-placement="bottom" uib-tooltip="Blind Carbon Copy">BCC</a>
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding" *ngIf="blindCarbonCopy">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>BCC</strong>
+          </label>
+
+          <div class="col-md-11">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>Subject</strong>
+          </label>
+
+          <div class="col-md-11">
+            <!-- value="{{replayTo.subject}}" -->
+            <input class="form-control" placeholder="Email Subject" type="text" name="subject" [(ngModel)]="commonModel.subject">
+            <em>
+              <a class="show-next" (click)="attachments = true" tooltip-placement="bottom" uib-tooltip="Attachments">
+                <i class="fa fa-paperclip fa-lg"></i>
+              </a>
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding " *ngIf="attachments">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>Attachments</strong>
+          </label>
+
+          <div class="col-md-11">
+              <input class="form-control fileinput" #file id="filePicker" type="file" multiple="multiple"  (change)="onFileSelect($event)">
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-message no-padding">
+
+      <div id="emailbody" [summernote]="{height: 500}" (change)="onChange($event)" *ngIf="commonModel.emailText !==''">
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="email-reply-text">
+          <p>
+            <!-- {{replayTo.contact.name}} -->
+            <span class="text-primary">&lt;{{commonModel.sender}}&gt;</span>
+            to me On {{commonModel.internalDate | date: 'medium'}}
+          </p>
+          <!-- {{commonModel.emailText}} -->
+
+          <div [innerHTML]="commonModel.emailText"></div>
+
+
+
+
+
+        </div>
+
+        <div *ngIf=" commonModel.attachments">
+
+          <div class="attachment" *ngFor="let attachments of commonModel.attachments">
+            <span (click)="onAttachmentDownload(attachment.result.data,attachment.name)">
+              <a> {{attachments.name}}</a> 
+
+
+            </span>
+
+            <!-- <span style="float:right" (click)="onAttachmentDelete(attachments)">X</span> -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inbox-compose-footer">
+
+      <button class="btn btn-danger" type="button" (click)="draft()">
+        Disregard
+      </button>
+
+      <button class="btn btn-info" type="button" (click)="draft()">
+        Draft
+      </button>
+
+      <button *ngIf="!sending" (click)="send()" class="btn btn-primary pull-right" type="button">
+        Send
+        <i class="fa fa-arrow-circle-right fa-lg"></i>
+      </button>
+      <button *ngIf="sending" class="btn btn-primary pull-right" type="button">
+        <i class="fa fa-refresh fa-spin"></i> Sending...
+      </button>
+
+
+    </div>
+
+  </form>
+
+</div>

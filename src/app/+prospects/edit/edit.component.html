@@ -1,0 +1,100 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Account']" icon="pencil" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+  </div>
+
+  <!-- widget grid -->
+  <sa-widgets-grid>
+    <!-- START ROW -->
+    <div class="row">
+      <!-- NEW COL START -->
+      <article class="col-sm-12 col-md-12 col-lg-6">
+        <!-- Widget ID (each widget will need unique ID)-->
+        <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+          <header>
+            <h2>Edit</h2>
+          </header>
+          <!-- widget div-->
+          <div>
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+              <form id="rmt-accounts-add" class="smart-form"
+                    [saUiValidate]="validationOptions"
+                    novalidate="novalidate" >
+                <fieldset>
+                    <section>
+                      <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
+                        <input type="email" name="emailAddress" placeholder="Email Address" [(ngModel)]="account.username"/>
+                        <b class="tooltip tooltip-bottom-right">Needed to verify the new account.</b>
+                      </label>
+                    </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                      <input id="password" type="password" name="password" placeholder="New Password" [(ngModel)]="account.password" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Set new password.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                      <input type="password" name="passwordConfirm" placeholder="Confirm Password" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Confirm the password.</b> </label>
+                  </section>
+                </fieldset>
+                <fieldset>
+                  <div class="row rmt-account-edit-roles">
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                      <p>Roles</p><hr/><br/>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isAdministrator" [(ngModel)]="account.isAdministrator"/>
+                        <i></i>Administrator</label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="isCaptureTechnician" [(ngModel)]="account.isCaptureTechnician"/>
+                            <i></i>Capture Technician</label>
+                          <label class="checkbox">
+                            <input type="checkbox" name="isContentTechnician" [(ngModel)]="account.isContentTechnician"/>
+                            <i></i>Content Technician</label>
+                    </section>
+                    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                      <p>Status</p><hr/><br/>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isActive" [(ngModel)]="account.isActive"/>
+                        <i></i>Active</label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isVerified" [(ngModel)]="account.isVerified"/>
+                        <i></i>Verified</label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="isLocked" [(ngModel)]="account.isLocked"/>
+                        <i></i>Locked</label>
+                    </section>
+                  </div>
+                </fieldset>
+              </form>
+              <footer class="widget-footer">
+                  <div>
+                      <div class="btn btn-default action-button" (click)="onSubmit()">
+                          <div><i class="fa fa-save"></i></div>
+                          <div>Save</div>
+                      </div>
+                      <div class="btn btn-default action-button" (click)="onClickCancel($event)">
+                        <div><i class="fa fa-times"></i></div>
+                        <div>Cancel</div>
+                      </div>
+
+                  </div>
+                </footer>
+
+
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </div>
+        <!-- end widget -->
+      </article>
+      <!-- END COL -->
+    </div>
+    <!-- END ROW -->
+  </sa-widgets-grid>
+  <!-- end widget grid -->
+</div>
+

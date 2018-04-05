@@ -1,0 +1,29 @@
+<header id="header">
+  <div id="logo-group">
+    <span id="logo" class="rmt-header-title clickable" (click)="headerLogoOnClick($event)"><span class="rmt-header-title-weak">Real</span><span class="rmt-header-title-strong">Broker</span><span class="rmt-header-title-weak">Tech</span></span>
+    <sa-activities style="margin-left:2%"></sa-activities>
+  </div>
+
+  <!-- pulled right: nav area -->
+  <div class="pull-right">
+
+    <sa-collapse-menu></sa-collapse-menu>
+    <sa-logout></sa-logout>
+
+    <div id="search-mobile" class="btn-header transparent pull-right">
+      <span> <a (click)="toggleSearchMobile()" title="Search"><i class="fa fa-search"></i></a> </span>
+    </div>
+
+    <form #searchForm="ngForm" (ngSubmit)="onSubmit()" class="header-search pull-right">
+      <input id="search-fld" type="text" name="param" required
+             placeholder="Search...">
+      <button type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+      <a id="cancel-search-js" (click)="toggleSearchMobile()" title="Cancel Search"><i class="fa fa-times"></i></a>
+    </form>
+
+    <sa-full-screen></sa-full-screen>
+
+  </div>
+</header>

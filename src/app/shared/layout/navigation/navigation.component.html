@@ -1,0 +1,264 @@
+<aside id="left-panel">
+
+  <!-- User info -->
+  <sa-login-info></sa-login-info>
+  <!-- end user info -->
+
+  <nav>
+    <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+    Please note that these links work a bit different than
+    traditional href="" links. See documentation for details.
+    -->
+
+    <!-- Administrator Menu -->
+    <!-- *ngIf="user.isAdministrator" -->
+    <ul saSmartMenu *ngIf="user.isAdministrator">
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard" title="Dashboard">
+            <i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span>
+        </a>
+      </li>
+      
+      <li routerLinkActive="active">
+          <a routerLink="/accounts" title="Accounts">
+              <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Accounts</span>
+          </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/recruits" title="Recruits">
+            <i class="fa fa-lg fa-fw fa-bullseye"></i> <span class="menu-item-parent">Recruits</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/associates" title="Associates">
+            <i class="fa fa-lg fa-fw fa-street-view"></i> <span class="menu-item-parent">Associates</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/appointments" title="Appointments">
+            <i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Appointments</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/properties" title="Properties">
+            <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Properties</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/portals" title="Portals">
+            <i class="fa fa-lg fa-fw fa-cloud"></i> <span class="menu-item-parent">Portals</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/invoices" title="Invoices">
+            <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Accounts</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/payments" title="Payments">
+            <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Accounts</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Capture Technician Menu -->
+    <!-- *ngIf="user.isCaptureTech" -->
+    <ul saSmartMenu *ngIf="user.isCaptureTech">
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard" title="Dashboard">
+            <i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/appointments" title="Appointments">
+            <i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Appointments</span>
+        </a>
+      </li>
+     
+      <li routerLinkActive="active">
+        <a routerLink="/portals" title="Portals">
+            <i class="fa fa-lg fa-fw fa-cloud"></i> <span class="menu-item-parent">Portals</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/properties" title="Properties">
+            <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Properties</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/payments" title="Payments">
+            <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Accounts</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Content Technician Menu -->
+    <!-- *ngIf="user.isContentTech" -->
+    <ul saSmartMenu *ngIf="user.isContentTech">
+      <li routerLinkActive="active">
+        <a routerLink="/portals" title="Portals">
+            <i class="fa fa-lg fa-fw fa-cloud"></i> <span class="menu-item-parent">Portals</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/properties" title="Properties">
+          <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Properties</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/payments" title="Payments">
+            <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Accounts</span>
+        </a>
+      </li>
+    </ul>
+  
+    <!-- Broker Menu -->
+    <!-- *ngIf="user.isBroker" -->
+    <ul saSmartMenu *ngIf="user.isBroker">
+
+
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard" title="Dashboard">
+            <i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a  title="Outlook">
+            <i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Outlook</span>
+        </a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/outlook/INBOX">Inbox</a>
+          </li>
+          <!-- <li routerLinkActive="active">
+            <a routerLink="/tables/datatables">Email view</a>
+          </li> -->
+          <li routerLinkActive="active">
+            <a routerLink="/outlook/compose">Compose</a>
+          </li>
+          <!-- <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable">Reply</a>
+          </li> -->
+          <!-- <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable">Email Templates</a>
+          </li> -->
+        </ul>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/associates" title="Associates">
+            <i class="fa fa-lg fa-fw fa-street-view"></i> <span class="menu-item-parent">Associates</span>
+        </a>
+
+
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-umbrella"></i> <span
+          class="menu-item-parent">Associates</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/associates/agents">Agents</a>
+          </li>          
+          <li routerLinkActive="active">
+            <a routerLink="/associates/admins">Admins</a>
+          </li>          
+        </ul>
+      </li>
+
+
+
+      <li *ngIf="pinnedCampaigns">
+        <a href="#"><i class="fa fa-lg fa-fw fa-bullseye"></i> <span
+          class="menu-item-parent">Recruits</span></a>
+        <ul>
+          <li routerLinkActive="active" *ngFor="let pinnedCampaign of pinnedCampaigns">
+            <a routerLink="/campaigns/details/{{pinnedCampaign.id}}">{{pinnedCampaign.campaignName}}</a>
+          </li>          
+        </ul>
+      </li>
+ 
+
+      <li routerLinkActive="active">
+        <a routerLink="/agents" title="Agents">
+            <i class="fa fa-lg fa-fw fa-street-view"></i> <span class="menu-item-parent">Agent Roster</span>
+        </a>
+      </li>
+
+      <li routerLinkActive="active">
+        <a routerLink="/persons" title="People">
+          <i class="fa fa-lg fa-fw fa-group"></i> <span class="menu-item-parent">People</span>
+        </a>
+      </li>
+
+
+      <li routerLinkActive="active">
+        <a routerLink="/appointments" title="Appointments">
+            <i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Appointments</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/properties" title="Properties">
+            <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Properties</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/invoices" title="Invoices">
+            <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Invoices</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Agent Menu -->
+    <!-- *ngIf="user.isAgent && !user.isBroker" -->
+    <ul saSmartMenu *ngIf="user.isAgent && !user.isBroker">
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard" title="Dashboard">
+            <i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+          <a routerLink="/appointments" title="Appointments">
+              <i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Appointments</span>
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/properties" title="Properties">
+              <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Properties</span>
+          </a>
+        </li>
+    </ul>
+
+    <!-- Content Technician Menu -->
+    <!-- *ngIf="user.isAssistant" -->
+    <ul saSmartMenu *ngIf="user.isAssistant">
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard" title="Dashboard">
+            <i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/associates" title="Associates">
+            <i class="fa fa-lg fa-fw fa-street-view"></i> <span class="menu-item-parent">Associates</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/appointments" title="Appointments">
+            <i class="fa fa-lg fa-fw fa-calendar"></i> <span class="menu-item-parent">Appointments</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/properties" title="Properties">
+            <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Properties</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/invoices" title="Invoices">
+            <i class="fa fa-lg fa-fw fa-lock"></i> <span class="menu-item-parent">Accounts</span>
+        </a>
+      </li>
+    </ul>
+            
+  </nav>
+
+  <sa-minify-menu></sa-minify-menu>
+
+</aside>

@@ -1,0 +1,151 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+      <sa-big-breadcrumbs [items]="['Appointment']" icon="plus" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+    </div>
+  
+    <!-- widget grid -->
+    <sa-widgets-grid>
+      <!-- START ROW -->
+      <div class="row">
+        <!-- NEW COL START -->
+        <article class="col-xs-12 col-sm-9 col-md-8 col-lg-7">
+          <!-- Widget ID (each widget will need unique ID)-->
+          <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+            <header>
+              <h2>Create</h2>
+            </header>
+            <!-- widget div-->
+            <div>
+                <!-- widget content -->
+                <div class="widget-body">
+                  <div class="row row-spaced">
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Address:</strong></label>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-4">{{address}}</div>
+                  </div>
+                  <div class="row row-spaced">
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>City:</strong></label>
+                    <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-4">{{city}}</div>
+                  </div>
+                  <div class="row">
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>State:</strong></label>
+                    <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-4">{{state}}</div>
+                  </div>
+                  <div class="row">
+                  <hr/>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="row row-spaced">
+                        <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Email Address:</strong></label>
+                        <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{username}}</div>
+                      </div>
+                      <div class="row row-spaced">
+                        <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Last Name:</strong></label>
+                        <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{lastName}}</div>
+                      </div>
+                      <div class="row row-spaced">
+                        <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>First Name:</strong></label>
+                        <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{firstName}}</div>
+                      </div>
+                      <div class="row row-spaced">
+                        <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Mobile:</strong></label>
+                        <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{mobileNumber}}</div>
+                      </div>
+                      <div class="row row-spaced">
+                        <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Avatar:</strong></label>
+                        <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                          <img class="avatar" *ngIf="avatarUrl" [src]="avatarUrl" alt="{{firstName}} {{lastName}}">
+                          <img class="avatar" *ngIf="!avatarUrl" src="assets/img/avatars/default-user-image.png" alt="{{firstName}} {{lastName}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row row-spaced">
+                    <hr/>
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Duration Estimate:</strong></label>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{durationInMinutes}} min.</div>
+                  </div>
+                  <div class="row row-spaced">
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Request Appointment:</strong></label>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                      <div>
+                        <div>
+                          <div class="inline-icon">
+                            <div id="requested-date" class="input-group request-input">
+                              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-calendar icon"></i></span>
+                              <input type="text" class="form-control" [(ngModel)]="requestedEarliestDate"  (keypress)="onKeyPressDate($event)"/>
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="onClickDecreaseDate($event)">
+                                    <span class="fa fa-minus"></span>
+                                  </button>
+                                </span>
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="plus" (click)="onClickIncreaseDate($event)">
+                                  <span class="fa fa-plus"></span>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="inline-icon">
+                            <div id="requested-time" class="input-group request-input">
+                              <span class="input-group-addon" id="basic-addon1"><i class="fa fa-clock-o icon"></i></span>
+                              <input type="text" class="form-control" [(ngModel)]="requestedEarliestHour" (keypress)="onKeyPressHour($event)"/>
+                              <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="minus" (click)="onClickDecreaseHour($event)">
+                                  <span class="fa fa-minus"></span>
+                                </button>
+                              </span>
+                              <span class="input-group-btn">
+                                <button type="button" class="btn btn-default btn-number" data-type="plus" (click)="onClickIncreaseHour($event)">
+                                  <span class="fa fa-plus"></span>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row row-spaced">
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Select Appointment:</strong></label>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                      <div *ngFor="let appointment of proposedAppointments">
+                        <label [for]='status'>
+                            <input #widget
+                            class='with-gap'
+                            name='appointmentOptions'
+                            type='radio'
+                            [id]='appointment.id'
+                            [value]='appointment.id'
+                            [(ngModel)]='selectedAppointmentId'
+                            />{{appointment.scheduledStart | date: 'MMMM d, y, h:mm a'}}
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <footer class="widget-footer">
+                  <div class="btn btn-default action-button" (click)="onSubmit()">
+                    <div><i class="fa fa-save"></i></div>
+                    <div>Save</div>
+                  </div>
+                  <div class="btn btn-default action-button" (click)="onClickCancel($event)">
+                    <div><i class="fa fa-times"></i></div>
+                    <div>Cancel</div>
+                  </div>
+                </footer>
+              </div>
+              <!-- end widget content -->
+            </div>
+            <!-- end widget div -->
+          </div>
+          <!-- end widget -->
+        </article>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </sa-widgets-grid>
+    <!-- end widget grid -->
+  </div>
+  
+  

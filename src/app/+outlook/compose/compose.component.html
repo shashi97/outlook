@@ -1,0 +1,191 @@
+<angular4-notify-notifications-container></angular4-notify-notifications-container>
+
+<sa-outlook-gmail *ngIf="isShowGmailLoginPage" (onSuccessSignIn)="onSuccessSignIn($event)"></sa-outlook-gmail>
+
+<div class="table-wrap custom-scroll sa-outlook-content" *ngIf="!isShowGmailLoginPage">
+  <h2 class="email-open-header">
+    Compose New Email
+    <span class="label txt-color-white" *ngIf="messageId !== '' ">draft</span>
+    <a tooltip-placement="left" uib-tooltip="Print" class="txt-color-darken pull-right"></a>
+  </h2>
+
+  <form enctype="multipart/form-data" class="form-horizontal">
+
+    <div class="inbox-info-bar no-padding">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>To</strong>
+          </label>
+
+          <div class="col-md-11">
+            <p-chips name="to" [(ngModel)]="commonModel.toValues" addOnTab=true addOnBlur=true></p-chips>
+            <em>
+              <a (click)="carbonCopy = true" *ngIf="!carbonCopy" tooltip-placement="bottom" uib-tooltip="Carbon Copy">CC</a>
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding" *ngIf="carbonCopy">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>CC</strong>
+          </label>
+          <div class="col-md-11">
+            <p-chips name="cc" [(ngModel)]="commonModel.ccValues" addOnTab=true addOnBlur=true></p-chips>
+            <em>
+              <a (click)="blindCarbonCopy=true" *ngIf="!blindCarbonCopy" tooltip-placement="bottom" uib-tooltip="Blind Carbon Copy">BCC</a>
+            </em>
+          </div>
+
+      
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding" *ngIf="blindCarbonCopy">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>BCC</strong>
+          </label>
+          <div class="col-md-11">
+            <p-chips name="bcc" [(ngModel)]="commonModel.bccValues" addOnTab=true addOnBlur=true></p-chips>
+
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>Subject</strong>
+          </label>
+
+          <div class="col-md-11">
+            <input class="form-control" name="Subject" placeholder="Email Subject" type="text" [(ngModel)]="commonModel.subject">
+            <em>
+              <a class="show-next" (click)="attachments = true" tooltip-placement="bottom" uib-tooltip="Attachments">
+                <i class="fa fa-paperclip fa-lg"></i>
+              </a>
+            </em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-info-bar no-padding " *ngIf="attachments">
+      <div class="row">
+        <div class="form-group">
+          <label class="control-label col-md-1">
+            <strong>Attachments</strong>
+          </label>
+
+          <div class="col-md-11">
+            <input class="form-control fileinput" #file id="filePicker" type="file" multiple="multiple"  (change)="onFileSelect($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inbox-message no-padding">
+
+      <div id="emailbody" [summernote]="{height: 500}" (change)="onChange($event)" *ngIf="commonModel.emailText !== '' && messageId !== '' ">
+         
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="email-reply-text">
+          <p>
+              <!-- {{replayTo.contact.name}} -->
+             <!-- <span class="text-primary">&lt;{{commonModel.sender}}&gt;</span>
+            to me  On Thu, Feb 8, 2018 at 8:35 PM -->
+          </p>
+          <!-- {{commonModel.emailText}} -->
+
+          <div [innerHTML]="commonModel.emailText"></div>
+
+
+        </div>
+
+      </div>
+
+      <div id="emailbody" [summernote]="{height: 500}" (change)="onChange($event)" *ngIf="messageId=== ''">
+         
+      
+  
+        </div>
+    </div>
+
+    <div class="inbox-compose-footer">
+
+      <button class="btn btn-danger" type="button" (click)="draft(false)">
+        Disregard
+      </button>
+
+      <button class="btn btn-info" type="button" (click)="draft(true)">
+        Draft
+      </button>
+
+      <button *ngIf="!sending" (click)="send()" class="btn btn-primary pull-right" type="button">
+        Send
+        <i class="fa fa-arrow-circle-right fa-lg"></i>
+      </button>
+      <button *ngIf="sending" class="btn btn-primary pull-right" type="button">
+        <i class="fa fa-refresh fa-spin"></i> Sending...
+      </button>
+
+
+    </div>
+
+  </form>
+
+  <!-- <div class="email-infobox">
+
+    <div class="well well-sm well-light">
+      <h5>Related Invoice</h5>
+      <ul class="list-unstyled">
+        <li>
+          <i class="fa fa-file fa-fw text-success"></i><a href-void> #4831 - Paid</a>
+        </li>
+        <li>
+          <i class="fa fa-file fa-fw text-danger"></i><a href-void><strong> #4835 - Unpaid</strong></a>
+        </li>
+      </ul>
+
+
+    </div>
+
+    <div class="well well-sm well-light">
+      <h5>Upcoming Meetings</h5>
+
+      <p>
+        <span class="label label-success"><i class="fa fa-check"></i> <del>Agenda Review @ 10 AM</del> </span>
+      </p>
+
+      <p>
+        <span class="label label-primary"><i class="fa fa-clock-o"></i> Client Meeting @ 2:30 PM</span>
+      </p>
+
+      <p>
+        <span class="label label-warning"><i class="fa fa-clock-o"></i> Salary Review @ 4:00 PM</span>
+      </p>
+    </div>
+
+    <ul class="list-inline">
+      <li><img src="assets/img/avatars/5.png" alt="me" width="30px"></li>
+      <li><img src="assets/img/avatars/3.png" alt="me" width="30px"></li>
+      <li><img src="assets/img/avatars/sunny.png" alt="me" width="30px"></li>
+      <li><a href-void>1 more</a></li>
+    </ul>
+
+  </div> -->
+</div>

@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* #GOOGLE FONT */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700");
+@import url("assets/css/rmt.css");
+
+.ui-state-highlight{
+    float: left;
+}
+.ui-chips .ui-chips-token.ui-state-highlight{
+    float: left;
+    clear: none;
+    background: none;
+    min-width: 100px;
+    text-align: center;
+    color: #fff;
+    background: #3276b1;
+    padding: 2px;
+}
+.ui-chips ul.ui-inputtext{
+    padding: 0 10px;
+    border: none;
+    margin-bottom: 4px;
+}
+.ui-chips ul.ui-inputtext.ui-state-focus{
+    background: none;}
+    .ui-chips ul.ui-inputtext li{
+        margin-top: 4px;
+        list-style-type: none;
+    }
+    .ui-chips-input-token input{
+        border: none;
+        line-height: 29px;
+    }
+    .ui-chips-token-icon{
+        float: right;
+        margin-top: 2px;
+    }
+
+    .sa-outlook-content .table-wrap {
+        overflow: visible;
+    }
+
+    .sa-outlook-content .inbox-side-bar{
+        position: absolute;
+        min-height: 100vh;
+        overflow: auto;
+    }
+    .inbox-body.no-content-padding {
+        margin-top: 0;
+        background: #fff;
+        /* overflow: auto; */
+        min-height: 100vh;
+    }
+
+    /* .ui-chips .ui-inputtext:focus, .ui-chips .ui-inputtext.ui-state-focus{
+        box-shadow: none;
+    } */
+
+ 
+.inbox-nav-bar .pagination{
+    float: right;
+    margin: 0;
+}
+.inbox-nav-bar .pagination li{
+    float: right;
+
+   
+}
+.inbox-nav-bar .pagination li a{
+color: #000;
+}
+.inbox-nav-bar .pagination li + li{
+    margin-left: 10px;}
+
+    .inbox-nav-bar .pagination li.disabled a{
+        color: #ccc;
+    }
+
+    .inbox-nav-bar    .btn-group>.btn  {
+        float: none;
+    }
+
+    .inbox-nav-bar  .btn-group>.btn-group {
+        float: none;
+    }

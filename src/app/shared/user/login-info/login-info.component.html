@@ -1,0 +1,8 @@
+<div class="login-info">
+  <span *ngIf="user"><a (click)="navigateToProfile()">
+      <img  *ngIf="user.avatarUrl" [src]="user.avatarUrl" alt="profile" class="offline"/>
+      <img  *ngIf="!user.avatarUrl" src="assets/img/avatars/default-user-image.png" alt="profile" class="offline"/>
+      <span>{{user.firstName}} {{user.lastName}}</span>
+    </a>
+   </span>
+</div>

@@ -1,0 +1,108 @@
+<header id="header" class="animated fadeInDown">
+
+  <div id="logo-group-rmt-override">
+      <span id="logo" class="rmt-header-title"><span class="rmt-header-title-weak">Real</span><span class="rmt-header-title-strong">Market</span><span class="rmt-header-title-weak">Tech</span></span>
+    </div>
+
+  <span id="extr-page-header-space">
+        <span class="hidden-mobile hiddex-xs">Already registered?</span> <a routerLink="/auth/login" class="btn btn-danger">Sign In</a> </span>
+
+</header>
+<div id="main" role="main" class="animated fadeInDown">
+
+  <!-- MAIN CONTENT -->
+  <div id="content" class="container">
+
+    <div class="row">
+
+        <div class="col-xs-1 col-sm-3 col-md-4 col-lg-4"></div>
+        <div class="col-xs-10 col-sm-6 col-md-4 col-lg-4">
+          <div class="well no-padding">
+
+          <form id="smart-form-register" class="smart-form client-form">
+            <header>
+              Registration
+            </header>
+
+            <fieldset>
+              <section>
+                <label class="input"> <i class="icon-append fa fa-envelope"></i>
+                  <input [(ngModel)]="emailAddress" type="email" name="email" placeholder="Email address">
+                  <b class="tooltip tooltip-bottom-right">This will be your sign-in name.</b> </label>
+              </section>
+
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input [(ngModel)]="password" type="password" name="password" placeholder="Password" id="password">
+                  <b class="tooltip tooltip-bottom-right">Don't forget your password!</b> </label>
+              </section>
+
+              <section>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input [(ngModel)]="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm password">
+                  <b class="tooltip tooltip-bottom-right">Don't forget your password!</b> </label>
+              </section>
+            </fieldset>
+            <fieldset>
+                <section>
+                  <label class="input">
+                    <input [(ngModel)]="firstName"  type="text" name="firstName" placeholder="First Name">
+                    <b class="tooltip tooltip-bottom-right">Tell us who you are.</b>
+                  </label>
+                </section>
+                <section>
+                  <label class="input">
+                    <input [(ngModel)]="lastName"  type="text" name="lastName" placeholder="Last Name">
+                    <b class="tooltip tooltip-bottom-right">Tell us who you are.</b>
+                  </label>
+                </section>
+                <section>
+                  <label class="input">
+                    <input [(ngModel)]="title"  type="text" name="title" placeholder="Title">
+                    <b class="tooltip tooltip-bottom-right">Tell us who you are.</b>
+                  </label>
+                </section>
+                <section>
+                  <label class="input"> <i class="icon-append fa fa-mobile"></i>
+                    <input [(ngModel)]="mobileNumber"  type="text" name="mobileNumber" placeholder="Mobile Number">
+                    <b class="tooltip tooltip-bottom-right">Let's talk.</b>
+                  </label>
+                </section>
+              </fieldset>
+              <fieldset>
+              <section>
+                <!-- <label class="checkbox">
+                  <input type="checkbox" name="subscription" id="subscription">
+                  <i></i>I want to receive news and special offers</label> -->
+                <label class="checkbox">
+                  <input type="checkbox" name="terms" id="terms" [(ngModel)]="termsAgreed">
+                  <i></i>I agree with the <a href="#" (click)="openModal($event, termsModal)"> Terms and Conditions </a></label>
+              </section>
+            </fieldset>
+            <footer>
+              <button (click)="register($event)" class="btn btn-primary">
+                Register
+              </button>
+            </footer>
+            <div class="message">
+              <i class="fa fa-check"></i>
+              <p>
+                Thank you for your registration!
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-xs-1 col-sm-3 col-md-4 col-lg-4"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <ng-container  *ngComponentOutlet="TermsModalComponent"></ng-container> -->
+
+<ng-template #termsModal>
+  <smart-terms-modal (agree)="onTermsAgree()" (close)="onTermsClose()"></smart-terms-modal>
+
+</ng-template>

@@ -1,0 +1,704 @@
+{
+  "aaData": [
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Roy Fox",
+   "city": "Lyon"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Carmelo Sloan",
+   "city": "Mount Baker"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Nicholas Maxwell",
+   "city": "Pickerel Narrows"
+ },
+ {
+   "category": "Lease",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Vicente Medina",
+   "city": "Spring City"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Jacob Wood",
+   "city": "Coltman"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "William Ellison",
+   "city": "Longview"
+ },
+ {
+   "category": "Lease",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Emilie Burton",
+   "city": "Momford Landing"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Jenna Hunt",
+   "city": "Kalauao"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Damarion Joseph",
+   "city": "Wilhelm Park"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Addisyn Conway",
+   "city": "Mitchell"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Cedric Stone",
+   "city": "Cimarron"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Stella Ford",
+   "city": "Midland City"
+ },
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Selina Tanner",
+   "city": "Coal Creek"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Matias Buck",
+   "city": "Gaskil"
+ },
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Cole Hatfield",
+   "city": "Stanardsville"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Nylah Bauer",
+   "city": "Skookumchuck"
+ },
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Wilson Colon",
+   "city": "Warner"
+ },
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Jaydon Williams",
+   "city": "Willow Run"
+ },
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Lainey Arnold",
+   "city": "Farmington Lake"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Jude Lester",
+   "city": "Willaha"
+ },
+ {
+   "category": "Lease",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Marissa Keith",
+   "city": "Mittenlane"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Luke Woods",
+   "city": "Scottsville"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Marquise Day",
+   "city": "Emerson"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "June Hooper",
+   "city": "Ipswich"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Abagail Hurst",
+   "city": "Farwell"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Yadira Chaney",
+   "city": "Bannister Acres"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Aubrie Dunn",
+   "city": "Social Circle"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Makhi Caldwell",
+   "city": "Brookhaven"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Landon Landry",
+   "city": "Sacramento"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Eva Hendrix",
+   "city": "Rabbitown"
+ },
+ {
+   "category": "Lease",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Litzy Frank",
+   "city": "Morgan Mill"
+ },
+ {
+   "category": "Lease",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Semaj Warren",
+   "city": "Two Brooks"
+ },
+ {
+   "category": "Lease",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Prince Powell",
+   "city": "Edgerton"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Mark Mcgrath",
+   "city": "Warner"
+ },
+ {
+   "category": "Listing",
+   "type": "IND",
+   "dte": "35",
+   "client": "Adriel Rodgers",
+   "city": "Willow Run"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "12",
+   "client": "German Hamilton",
+   "city": "Farmington Lake"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "26",
+   "client": "Jaiden Patton",
+   "city": "Willaha"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "20",
+   "client": "Reese Curtis",
+   "city": "Mittenlane"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "12",
+   "client": "Kinsley Jackson",
+   "city": "Scottsville"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "17",
+   "client": "Braiden Gutierrez",
+   "city": "Emerson"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "31",
+   "client": "Linda Bruce",
+   "city": "Ipswich"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "38",
+   "client": "Amanda Bowman",
+   "city": "Farwell"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "35",
+   "client": "Ryleigh Hanna",
+   "city": "Bannister Acres"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "34",
+   "client": "Caylee Gamble",
+   "city": "Social Circle"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "20",
+   "client": "Campbell Berg",
+   "city": "Brookhaven"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "33",
+   "client": "Mylee Hansen",
+   "city": "Sacramento"
+ },
+ {
+   "category": "Listing",
+   "type": "IND",
+   "dte": "15",
+   "client": "Laura Pierce",
+   "city": "Rabbitown"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "38",
+   "client": "Ibrahim Gibbs",
+   "city": "Morgan Mill"
+ },
+ {
+   "category": "Listing",
+   "type": "IND",
+   "dte": "42",
+   "client": "Junior Reed",
+   "city": "Two Brooks"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "10",
+   "client": "Darian Massey",
+   "city": "Edgerton"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "14",
+   "client": "Brennan George",
+   "city": "East Natchitoches"
+ },
+ {
+   "category": "Listing",
+   "type": "IND",
+   "dte": "25",
+   "client": "Kylan Dudley",
+   "city": "Conyersville"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "15",
+   "client": "Tyrell Stafford",
+   "city": "Martins Corner"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "10",
+   "client": "Matilda Woodard",
+   "city": "Center"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "18",
+   "client": "Zayden Wilkerson",
+   "city": "East Waterford"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "42",
+   "client": "Sheldon Duffy",
+   "city": "Hebron"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "19",
+   "client": "Sofia Anderson",
+   "city": "North Knoxville"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "27",
+   "client": "Heidi Rocha",
+   "city": "Storms"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "42",
+   "client": "Zachariah Avila",
+   "city": "Brentwood Village"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "42",
+   "client": "David Cabrera",
+   "city": "Bent Pine"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "17",
+   "client": "Brenton Vaughan",
+   "city": "Kreutzberg"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "13",
+   "client": "Jax Cardenas",
+   "city": "Montverde Junction"
+ },
+ {
+   "category": "Listing",
+   "type": "2-4",
+   "dte": "18",
+   "client": "Maddison Hayes",
+   "city": "Del Rey Oaks"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "28",
+   "client": "Maria Blake",
+   "city": "Fairland"
+ },
+ {
+   "category": "Listing",
+   "type": "IND",
+   "dte": "13",
+   "client": "Karter Cantu",
+   "city": "Merrimac South"
+ },
+ {
+   "category": "Listing",
+   "type": "SFR",
+   "dte": "44",
+   "client": "Edward Crane",
+   "city": "Curriers"
+ },
+ {
+   "category": "Listing",
+   "type": "CCT",
+   "dte": "11",
+   "client": "Ty Raymond",
+   "city": "Slater"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Lilian Villarreal",
+   "city": "East Natchitoches"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Willie Allen",
+   "city": "Conyersville"
+ },
+ {
+   "category": "Purchase",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Dana Hood",
+   "city": "Martins Corner"
+ },
+ {
+   "category": "Purchase",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Dangelo Blevins",
+   "city": "Center"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Shaun Wolf",
+   "city": "East Waterford"
+ },
+ {
+   "category": "Purchase",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Declan Strickland",
+   "city": "Hebron"
+ },
+ {
+   "category": "Purchase",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Carina Solis",
+   "city": "North Knoxville"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Aiyana Sanchez",
+   "city": "Storms"
+ },
+ {
+   "category": "Purchase",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Kassandra Donaldson",
+   "city": "Brentwood Village"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Kelvin Spears",
+   "city": "Bent Pine"
+ },
+ {
+   "category": "Purchase",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Lilianna Glover",
+   "city": "Kreutzberg"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Lucy Hays",
+   "city": "Montverde Junction"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Marely Moss",
+   "city": "Del Rey Oaks"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Alicia Lindsey",
+   "city": "Fairland"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Alena Gay",
+   "city": "Merrimac South"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Maliyah Newman",
+   "city": "Curriers"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Bryanna Pace",
+   "city": "Slater"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Joyce Pearson",
+   "city": "Lyon"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Cason Pugh",
+   "city": "Mount Baker"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Kadence Payne",
+   "city": "Pickerel Narrows"
+ },
+ {
+   "category": "Purchase",
+   "type": "2-4",
+   "dte": "NA",
+   "client": "Wyatt Travis",
+   "city": "Spring City"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Ariel Singleton",
+   "city": "Coltman"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Talon Vance",
+   "city": "Longview"
+ },
+ {
+   "category": "Purchase",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Aidyn Gray",
+   "city": "Momford Landing"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Gage Estrada",
+   "city": "Kalauao"
+ },
+ {
+   "category": "Purchase",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Preston Higgins",
+   "city": "Wilhelm Park"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Deja Mays",
+   "city": "Mitchell"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Julie Martinez",
+   "city": "Cimarron"
+ },
+ {
+   "category": "Purchase",
+   "type": "IND",
+   "dte": "NA",
+   "client": "Cailyn Stark",
+   "city": "Midland City"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Griffin Holmes",
+   "city": "Coal Creek"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Kristin Long",
+   "city": "Gaskil"
+ },
+ {
+   "category": "Purchase",
+   "type": "SFR",
+   "dte": "NA",
+   "client": "Mayra Rojas",
+   "city": "Stanardsville"
+ },
+ {
+   "category": "Purchase",
+   "type": "CCT",
+   "dte": "NA",
+   "client": "Zion Ortiz",
+   "city": "Skookumchuck"
+ }
+]
+}

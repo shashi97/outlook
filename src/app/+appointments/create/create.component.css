@@ -1,0 +1,50 @@
+.widget-footer {
+    padding: 14px 7px 14px 15px;
+}
+
+.row {
+    margin-bottom: 6px;
+}
+
+
+.action-button {
+    width: 60px;
+}
+
+.with-gap {
+    margin-right: 7px;
+}
+
+.avatar {
+    max-height: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(221,221,221);
+}
+
+
+
+.label-icon {
+    font-size: 1.5em;
+    color: grey;
+
+
+}
+
+.inline-icon {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    margin-bottom: 7px;
+}
+
+.icon {
+    min-width: 20px;
+}
+
+.row-spaced {
+    margin-bottom: 14px;
+}
+
+
+

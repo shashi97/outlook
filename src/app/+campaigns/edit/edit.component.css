@@ -1,0 +1,18 @@
+div.roles {
+    margin-left: 5px;
+}
+
+img.avatar {
+    max-height: 100px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(221,221,221);
+}
+
+div.widget-footer {
+    padding: 14px 7px 14px 15px;
+}
+
+div.action-button {
+    width: 60px;
+}

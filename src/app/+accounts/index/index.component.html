@@ -1,0 +1,99 @@
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Accounts']" icon="table" class="col-xs-12 col-sm-6 col-md-6 col-lg-4"></sa-big-breadcrumbs>
+   </div>
+  <sa-widgets-grid>
+    <div class="row">
+      <article class="col-sm-12 col-md-12 col-lg-12">
+         <div sa-widget [editbutton]="false" [fullscreenbutton]="false" color="blueDark">
+          <header>
+            <h2>Index</h2>
+          </header>
+            <div>
+              <div class="widget-body no-padding">
+                <div class="row" style="padding: 8px 12px">
+                  <div class="col-md-6">
+                      <div class="input-group">
+                          <div class="icon-addon">
+                              <input type="text" id="search" class="form-control"  [(ngModel)]="controls.filter"
+                                  placeholder='Type to filter the table...'
+                                  (keyup)='updateFilter($event)'>
+                              <label style="z-index: 22" for="search" class="fa fa-search" rel="tooltip" title="search"></label>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="pull-right form-control " style="width: 70px;" (ngModelChange)="updatePageSize($event)" [(ngModel)]="controls.pageSize">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>50</option>
+                    </select>
+                  </div>
+                </div>
+                <ngx-datatable
+                  #table
+                  class="table"
+                  [rows]="rows"
+                  [loadingIndicator]="loadingIndicator"
+                  [columnMode]="'force'"
+                  [headerHeight]="40"
+                  [footerHeight]="40"
+                  [rowHeight]="'auto'"
+                  [limit]="controls.pageSize"
+                  [selected]="selected"
+                  [selectionType]="'single'"
+                  (select)='onSelect($event)'
+                  [cssClasses]= "{
+                      sortAscending: 'fa fa-caret-up',
+                      sortDescending: 'fa fa-caret-down',
+                      pagerLeftArrow: 'fa fa-angle-left',
+                      pagerRightArrow: 'fa fa-angle-right',
+                      pagerPrevious: 'fa fa-angle-double-left',
+                      pagerNext: 'fa fa-angle-double-right'
+                    }"
+                  [reorderable]="reorderable"
+                  [messages]="{totalMessage: ' Records Total'}"
+                  >
+                  <ngx-datatable-column name="Username" prop="username">
+                      <ng-template let-value="value" ngx-datatable-cell-template>
+                          {{value}}
+                        </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Active" prop="isActive" [canAutoResize]="false">
+                      <ng-template let-value="value" ngx-datatable-cell-template>
+                          <i *ngIf="value" class="fa fa-check"></i>
+                        </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Verified" prop="isVerified" [canAutoResize]="false">
+                      <ng-template let-value="value" ngx-datatable-cell-template>
+                          <i *ngIf="value" class="fa fa-check"></i>
+                        </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Locked" prop="isLocked" [canAutoResize]="false">
+                      <ng-template let-value="value" ngx-datatable-cell-template>
+                          <i *ngIf="value" class="fa fa-check"></i>
+                        </ng-template>
+                  </ngx-datatable-column>
+                  <ngx-datatable-column name="Last Login" prop="lastLoginAt" [canAutoResize]="false">
+                      <ng-template let-value="value" ngx-datatable-cell-template>
+                          {{value | date: 'MM/dd/yyyy'}}
+                        </ng-template>
+                  </ngx-datatable-column>
+                </ngx-datatable>
+                <footer  class="widget-footer">
+                    <div class="pull-right action-button-bar">
+                      <div class="btn btn-default action-button" (click)="onClickCreate($event)">
+                        <div><i class="fa fa-plus"></i></div>
+                        <div>Create</div>
+                      </div>
+                    </div>
+                </footer>
+              </div>
+            </div>
+         </div>
+      </article>
+    </div>
+  </sa-widgets-grid>
+</div>
+

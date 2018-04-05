@@ -1,0 +1,95 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Profile']" icon="pencil" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+  </div>
+
+  <!-- widget grid -->
+  <sa-widgets-grid>
+    <!-- START ROW -->
+    <div class="row">
+      <!-- NEW COL START -->
+      <article class="col-sm-12 col-md-12 col-lg-6">
+        <!-- Widget ID (each widget will need unique ID)-->
+        <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+          <header>
+            <h2>Edit</h2>
+          </header>
+          <!-- widget div-->
+          <div>
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+              <form id="rmt-profile-edit" class="smart-form"
+                    [saUiValidate]="validationOptions"
+                    novalidate="novalidate" >
+                <fieldset>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
+                      <input id="username" type="text" name="username" placeholder="Email Address" [(ngModel)]="profile.username" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Needed to coomunicate with the associate.</b>
+                    </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                      <input id="lastName" type="text" name="lastName" placeholder="Last Name" [(ngModel)]="profile.lastName" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's last name.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-user"></i>
+                      <input id="firstName" type="text" name="firstName" placeholder="First Name" [(ngModel)]="profile.firstName" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's first name.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-star"></i>
+                      <input id="title" type="text" name="title" placeholder="Title" [(ngModel)]="profile.title" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's title.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-phone"></i>
+                      <input id="mobileNumber" type="text" name="mobileNumber" placeholder="Mobile" [(ngModel)]="profile.mobileNumber" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Enter the associate's mobile number.</b> </label>
+                  </section>
+                  <section>
+                    <label class="input"> <i class="icon-append fa fa-image"></i>
+                      <input id="avatarUrl" type="text" name="avatarUrl" placeholder="Avatar URL" [(ngModel)]="profile.avatarUrl" autocomplete="new-password"/>
+                      <b class="tooltip tooltip-bottom-right">Link to the associate's avatar image.</b> </label>
+                  </section>
+                  <section>
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 row-share">
+                      <p>Summary</p><hr/><br/>
+                      <div class="form-group">
+                        <textarea class="form-control" rows="6" id="summary" name="summary" maxlength="4096" [(ngModel)]="profile.summary"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                    </div>                    
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 row-share">
+                      <p>Avatar</p><hr/><br/>
+                      <img class="avatar" *ngIf="profile.avatarUrl" [src]="profile.avatarUrl" alt="{{profile.firstName}} {{profile.lastName}}">
+                      <img class="avatar" *ngIf="!profile.avatarUrl" src="assets/img/avatars/default-user-image.png" alt="{{profile.firstName}} {{profile.lastName}}">
+                    </div>
+                  </section>
+                </fieldset>
+                <footer>
+                    <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+                    <button class="btn btn-primary"  (click)="onSubmit()">Save</button>
+                    <button class="btn btn-default" (click)="onClickCancel($event)">Cancel</button>
+                </footer>
+              </form>
+
+
+
+            </div>
+            <!-- end widget content -->
+          </div>
+          <!-- end widget div -->
+        </div>
+        <!-- end widget -->
+      </article>
+      <!-- END COL -->
+    </div>
+    <!-- END ROW -->
+  </sa-widgets-grid>
+  <!-- end widget grid -->
+</div>
+

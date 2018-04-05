@@ -1,0 +1,195 @@
+<sa-outlook-gmail *ngIf="isShowGmailLoginPage" (onSuccessSignIn)="onSignIn($event)">
+</sa-outlook-gmail>
+<div id="content" class="sa-outlook-content" *ngIf="!isShowGmailLoginPage">
+  <div class="inbox-nav-bar no-content-padding">
+
+
+
+    <h1 class="page-title txt-color-blueDark hidden-tablet">
+      <i class="fa fa-fw fa-inbox"></i> Inbox </h1>
+
+    <div class="btn-group visible-tablet" dropdown>
+      <button class="btn btn-default dropdown-toggle" tooltip="Labels" placement="bottom" dropdownToggle>
+        {{activeFolder?.name}}
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <ul class="dropdown-menu" *dropdownMenu>
+        <li [class.active]="folder.id == activeFolder.id" *ngFor="let folder of outlook.folders">
+          <a (click)="getListByLabelId(folder.id)">{{folder.name | titlecase}}
+            <i *ngIf="folder.id == activeFolder.id" class="fa fa-check"></i>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="inbox-checkbox-triggered">
+
+      <div class="btn-group">
+          <a placement="bottom" tooltip="Mark Important" class="btn btn-default">
+              <strong>
+                <i class="fa fa-exclamation fa-lg text-danger"></i>
+              </strong>
+            </a>
+        <div class="btn-group visible-tablet" dropdown>
+          <a  dropdownToggle data-toggle="tooltip" placement="bottom" tooltip="Move to folder" class="btn btn-default">
+            <strong>
+              <i class="fa fa-folder-open fa-lg"></i>
+            </strong>
+          </a>
+          <ul class="dropdown-menu" *dropdownMenu>
+            <li *ngFor="let folder of outlook.folders">
+              <a *ngIf="folder.name !=='SENT' && folder.name !=='DRAFT'" (click)="deleteSelected(folder.name)">{{folder.name | titlecase}}
+                <i></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      
+        <a (click)="deleteSelected('TRASH')" placement="bottom" tooltip="Delete" class="deletebutton btn btn-default">
+          <strong>
+            <i class="fa fa-trash-o fa-lg"></i>
+          </strong>
+        </a>
+      </div>
+      <button id="googleBtn" style="visibility: hidden;">Google Sign-In</button>
+    </div>
+
+    <a id="compose-mail-mini" class="btn btn-primary pull-right hidden-desktop visible-tablet">
+      <strong>
+        <i class="fa fa-file fa-lg"></i>
+      </strong>
+    </a>
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+
+      <!-- <span style="float:left"> -->
+          <strong>{{pager.startIndex}}-{{pager.endIndex}}</strong>
+
+          of
+    
+          <strong>{{messagesTotal}}</strong>
+        
+
+      <!-- </span> -->
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1 , true)" class="fa fa-chevron-right"></a>
+        </li>
+  
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1 , false)" class="fa fa-chevron-left"></a>
+      </li>
+     
+
+    </ul>
+    <!-- <div class="btn-group pull-right inbox-paging">
+      <a class="btn btn-default btn-sm" (click)="onNextPageClick(false)" [attr.disabled]="isDisablePreviousButton ? true: null">
+        <strong>
+          <i class="fa fa-chevron-left"></i>
+        </strong>
+      </a>
+      <a class="btn btn-default btn-sm" (click)="onNextPageClick(true)" [attr.disabled]="isDisableNextButton ? true: null">
+        <strong>
+
+          <i class="fa fa-chevron-right"></i>
+        </strong>
+      </a>
+    </div> -->
+    <!-- <span class="pull-right" *ngIf="messagesTotal > 0">
+      <strong *ngIf="messagesTotal >= 30 ">{{firstPageValue}}-{{lastPageValue}}</strong>
+
+      <strong>1-{{messagesTotal}}</strong>
+
+      of
+
+      <strong>{{messagesTotal}}</strong>
+    </span> -->
+
+  </div>
+
+  <div id="inbox-content" class="inbox-body no-content-padding">
+
+    <div class="inbox-side-bar">
+
+      <a [routerLink]="['compose']" id="compose-mail" class="btn btn-primary btn-block">
+        <strong>Compose</strong>
+      </a>
+
+      <h6> Folder
+        <a tooltip="Refresh" placement="left" class="pull-right txt-color-darken" (click)="onFolderRefresh()">
+          <i class="fa fa-refresh"></i>
+        </a>
+      </h6>
+
+      <ul class="inbox-menu-lg">
+        <li [class.active]="folder.id == activeFolder.id" *ngFor="let folder of outlook.folders">
+          <a (click)="getListByLabelId(folder.id)"> {{folder.name | titlecase }}
+            <span *ngIf="folder.unread">({{folder.unread}})</span>
+          </a>
+
+        </li>
+      </ul>
+
+      <h6> Quick Access
+        <a placement="right" data-tooltip="Add Another" class="pull-right txt-color-darken">
+          <i class="fa fa-plus"></i>
+        </a>
+      </h6>
+
+      <ul class="inbox-menu-sm">
+        <li *ngFor="let label of outlook.labels">
+          <a>{{label.name}} ({{outlook.labels.length}})</a>
+        </li>
+      </ul>
+
+      <div class="air air-bottom inbox-space" *ngIf="outlook.space">
+        {{outlook.space.free}} of
+        <strong>{{outlook.space.total}}</strong>
+        <a data-tooltip="Empty Spam" data-placement="top" class="pull-right txt-color-darken">
+          <i class="fa fa-trash-o fa-lg"></i>
+        </a>
+
+
+        <div class="progress-micro">
+          <progressbar value="{{outlook.space.ratio}}"></progressbar>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <router-outlet></router-outlet>
+
+    <div class="inbox-footer">
+
+      <div class="row">
+
+        <div class="col-xs-6 col-sm-1">
+
+          <div class="txt-color-white hidden-desktop visible-mobile" *ngIf="outlook.space">
+            {{outlook.space.free}} of
+            <strong>{{outlook.space.total}}</strong>
+            <div class="progress-micro">
+              <progressbar value="{{outlook.space.ratio}}"></progressbar>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-11 text-right">
+          <div class="txt-color-white inline-block">
+            <i class="txt-color-blueLight hidden-mobile">Last account activity
+              <i class="fa fa-clock-o"></i> 52 mins ago |</i> Displaying
+            <strong>44 of 259</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

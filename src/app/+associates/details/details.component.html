@@ -1,0 +1,86 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+      <sa-big-breadcrumbs [items]="['Associate']" icon="clipboard" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+    </div>
+  
+    <!-- widget grid -->
+    <sa-widgets-grid>
+      <!-- START ROW -->
+      <div class="row">
+        <!-- NEW COL START -->
+        <article class="col-sm-12 col-md-12 col-lg-6">
+          <!-- Widget ID (each widget will need unique ID)-->
+          <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+            <header>
+              <h2>Details</h2>
+            </header>
+            <!-- widget div-->
+            <div>
+              <!-- widget content -->
+              <div class="widget-body">
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Email Address:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{account.username}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>First Name:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{account.firstName}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Last Name:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{account.lastName}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Title:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{account.title}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Mobile:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">{{account.mobileNumber}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Avatar:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                      <img class="rmt-associates-details-avatar" *ngIf="account.avatarUrl" [src]="account.avatarUrl" alt="{{account.firstName}} {{account.lastName}}">
+                      <img class="rmt-associates-details-avatar" *ngIf="!account.avatarUrl" src="assets/img/avatars/default-user-image.png" alt="{{account.firstName}} {{account.lastName}}">
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <label class="checkbox"><strong>Roles:</strong></label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isBroker, 'fa-square': !account.isBroker}"></i>Broker</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isAgent, 'fa-square': !account.isAgent}"></i>Agent</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': account.isAssistant, 'fa-square': !account.isAssistant}"></i>Assistant</label>
+                  </div>
+                </div>
+                <footer class="widget-footer">
+                    <div class="btn btn-default action-button" (click)="onClickDeactivate($event)" *ngIf="user.isAdministrator || user.isBroker">
+                      <div><i class="fa fa-lock"></i></div>
+                      <div>Lock</div>
+                    </div>
+                    <div class="btn btn-default action-button" (click)="onClickEdit($event)" *ngIf="user.isAdministrator || user.isBroker">
+                      <div><i class="fa fa-pencil"></i></div>
+                      <div>Edit</div>
+                    </div>
+                    <div class="btn btn-default action-button" (click)="onClickCancel($event)">
+                      <div><i class="fa fa-arrow-left"></i></div>
+                      <div>Back</div>
+                    </div>
+                </footer>                
+              </div>
+              <!-- end widget content -->
+            </div>
+            <!-- end widget div -->
+          </div>
+          <!-- end widget -->
+        </article>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </sa-widgets-grid>
+    <!-- end widget grid -->
+  </div>
+  
+  

@@ -1,0 +1,46 @@
+<sa-outlook-gmail *ngIf="isShowGmailLoginPage" (onSuccessSignIn)="onSuccessSignIn($event)"></sa-outlook-gmail>
+
+<div class="table-wrap custom-scroll sa-outlook-content" *ngIf="!isShowGmailLoginPage && messages">
+  <table id="inbox-table" class="table table-striped table-hover" >
+    <tbody>
+      <tr id="msg{{i}}" [class.unread]="!message.read" *ngFor="let message of messages | sort: 'internalDate' let i = index">
+      <td class="inbox-table-icon">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" [(ngModel)]="message.selected" class="checkbox style-2">
+            <span></span> </label>
+        </div>
+      </td>
+      <td class="inbox-data-from hidden-xs hidden-sm"
+          (click)="getMessageByMessageId(message.id)"
+          >
+        <div uib-tooltip="message.snippet" tooltip-placement="center">
+          {{message.name}}
+        </div>
+      </td>
+      <td class="inbox-data-message"
+      (click)="getMessageByMessageId(message.id)"
+      >
+        <div>
+          <span><message-labels *ngIf="folderName !== 'INBOX' && folderName !== 'SENT'" [message]="message"></message-labels> {{message.subject}}</span>
+          {{message.body}}
+        </div>
+      </td>
+      <td class="inbox-data-attachment hidden-xs"
+      (click)="getMessageByMessageId(message.id)"
+      >
+        <div>
+          <a *ngIf="message.hasAttachments" tooltip="Attachment" placement="left" class="txt-color-darken"><i
+            class="fa fa-paperclip fa-lg"></i></a>
+        </div>
+      </td>
+      <td class="inbox-data-date hidden-xs">
+        <div>{{message.internalDate | date: 'short'}}
+        </div>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+</div>

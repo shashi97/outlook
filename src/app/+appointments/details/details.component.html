@@ -1,0 +1,86 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+      <sa-big-breadcrumbs [items]="['Property']" icon="clipboard" class="col-xs-12 col-sm-9 col-md-9 col-lg-9"></sa-big-breadcrumbs>
+    </div>
+  
+    <!-- widget grid -->
+    <sa-widgets-grid>
+      <!-- START ROW -->
+      <div class="row">
+        <!-- NEW COL START -->
+        <article class="col-sm-12 col-md-12 col-lg-6">
+          <!-- Widget ID (each widget will need unique ID)-->
+          <div sa-widget [editbutton]="false" [custombutton]="false" [fullscreenbutton]="false">
+            <header>
+              <h2>Details</h2>
+            </header>
+            <!-- widget div-->
+            <div>
+              <!-- widget content -->
+              <div class="widget-body">
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>Address:</strong></label>
+                  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-4">{{property.address}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>City:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-4">{{property.city}}</div>
+                </div>
+                <div class="row">
+                  <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><strong>State:</strong></label>
+                  <div  class="col-xs-12 col-sm-8 col-md-8 col-lg-4">{{property.state}}</div>
+                </div>
+                <div class="row">
+                <hr/>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="row">
+                      <label class="col-xs-6"><strong>Total Rooms:</strong></label>
+                      <div class="col-xs-6">{{property.totalRoomCount}}</div>
+                    </div>
+                    <div class="row">
+                      <label class="col-xs-6"><strong>Bedrooms:</strong></label>
+                      <div  class="col-xs-6">{{property.bedroomCount}}</div>
+                    </div>
+                    <div class="row">
+                      <label class="col-xs-6"><strong>Bathhroms:</strong></label>
+                      <div  class="col-xs-6">{{property.bathroomCount}}</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': property.hasAttic, 'fa-square': !property.isActive}"></i>Attic</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': property.hasBasement, 'fa-square': !property.hasBasement}"></i>Basement</label>
+                    <label class="checkbox"><i class="fa" [ngClass]="{'fa-check-square': property.hasGarage, 'fa-square': !property.hasGarage}"></i>Garage</label>
+                  </div>
+                </div>
+              <div class="row">
+                  <hr/>
+                  <label class="col-xs-12"><strong>Tag Line:</strong></label>
+                  <div class="col-xs-12">{{property.tagLine}}</div>
+              </div>
+              <div class="row">
+                <br/>
+                  <label class="col-xs-12"><strong>Summary:</strong></label>
+                  <div class="col-xs-12">{{property.summary}}</div>
+              </div>
+              <footer class="widget-footer">
+                  <button class="btn btn-danger"  (click)="onClickDelete($event)">Delete</button>
+                  <button class="btn btn-primary"  (click)="onClickEdit($event)">Edit</button>
+                  <button class="btn btn-default" (click)="onClickCancel($event)">Cancel</button>
+              </footer>
+            </div>
+
+              <!-- end widget content -->
+            </div>
+            <!-- end widget div -->
+          </div>
+          <!-- end widget -->
+        </article>
+        <!-- END COL -->
+      </div>
+      <!-- END ROW -->
+    </sa-widgets-grid>
+    <!-- end widget grid -->
+  </div>
+  
+  
